@@ -6,5 +6,5 @@ nums = [
     for n in range(2, 9 ** 5 * 6)
     if n == f(n)
 ]
-print(nums)
+# print(nums)
 print(sum(nums))

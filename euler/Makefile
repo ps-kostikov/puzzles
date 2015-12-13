@@ -1,10 +1,35 @@
-PROBLEMS=1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 17 18 21 23 24 27 28 31 32 39 94 123 151
+CPP_PROBLEMS = \
+	1 2 3 4 5 6 7 8 9 10 \
+	11 12 13 14 15 17 18 \
+	21 23 24 27 28 \
+	31 32 39 \
+	67 \
+	94 \
+	123 \
+	151 \
 
-$(PROBLEMS): common.h common.cpp
+PY_PROBLEMS = \
+	16 20 \
+	22 25 29 30 \
+
+
+$(CPP_PROBLEMS): %: common.h common.cpp %.cpp
 	g++-4.8 -std=c++11 -O2 common.cpp $@.cpp -o $@
 
-# test:
-# 	[[ `./1` = "233168" ]] && echo 1 OK || echo 1 FAIL
+TEST_CPP_PROBLEMS = $(addprefix test-,$(CPP_PROBLEMS))
+
+$(TEST_CPP_PROBLEMS): test-%: %
+	./test.sh $* cpp
+
+
+TEST_PY_PROBLEMS = $(addprefix test-,$(PY_PROBLEMS))
+
+$(TEST_PY_PROBLEMS): test-%:
+	./test.sh $* py
+
+
+test: $(TEST_CPP_PROBLEMS) $(TEST_PY_PROBLEMS)
+	
 
 clean:
-	rm -f $(PROBLEMS)
+	rm -f $(CPP_PROBLEMS)
