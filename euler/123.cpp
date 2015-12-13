@@ -16,8 +16,9 @@ int main()
             continue;
         }
         if (2 * n * prime > limit) {
-            std::cout << n << ": " << prime << std::endl;
-            return 0;
+            // std::cout << n << ": " << prime << std::endl;
+            std::cout << n << std::endl;
+            break;
         }
     }
     return 0;

@@ -85,15 +85,14 @@ std::ostream& operator<<(std::ostream& os, const LongInt& i)
 
 int main()
 {
-    std::cout << "hello" << std::endl;
     LongInt next;
     LongInt sum;
     while (std::cin >> next) {
         sum = sum + next;
         // cout << next;
-        std::cout << next << std::endl;
+        // std::cout << next << std::endl;
     }
-    std::cout << sum << std::endl;
+    // std::cout << sum << std::endl;
     std::cout << sum.firstDigits(10) << std::endl;
 
     return 0;

@@ -36,7 +36,6 @@ struct Evaluator
 
 int main()
 {
-    std::cout << "hello" << std::endl;
     auto evaluator = Evaluator();
     Naturals all;
     for (Natural i = 1; i <= 1000000; ++i) {
@@ -46,7 +45,8 @@ int main()
         return evaluator.eval(n1) < evaluator.eval(n2);
     };
     auto best = *std::max_element(all.begin(), all.end(), cmp);
-    std::cout << best << ": " << evaluator.eval(best) << std::endl;
-    std::cout << "total evaluated: " << evaluator.cache.size() << std::endl;
+    // std::cout << best << ": " << evaluator.eval(best) << std::endl;
+    // std::cout << "total evaluated: " << evaluator.cache.size() << std::endl;
+    std::cout << best << std::endl;
     return 0;
 }

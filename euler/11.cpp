@@ -11,11 +11,10 @@ constexpr size_t LENGTH = 4;
 std::vector<Naturals>
 readInput()
 {
-    std::ifstream inf("11.in");
     std::vector<Naturals> result;
     std::string line;
     for (size_t i = 0; i < SIZE; ++i) {
-        std::getline(inf, line);
+        std::getline(std::cin, line);
         std::stringstream ss;
         ss << line;
         Natural n;

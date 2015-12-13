@@ -11,7 +11,7 @@ int main()
         if (prime >= 2000000) {
             break;
         }
-        std::cout << prime << std::endl;
+        // std::cout << prime << std::endl;
         sum += prime;
     }
     std::cout << sum << std::endl;

@@ -1,10 +1,42 @@
 #include "common.h"
 
 #include <iostream>
+#include <vector>
+
+struct PrimeExp
+{
+    Natural prime;
+    size_t exp;
+};
+
+typedef std::vector<PrimeExp> PrimeExps;
+
+PrimeExps
+primeReduceExp(Natural n)
+{
+    PrimeExps primeExps;
+    if (n <= 1) {
+        return primeExps;
+    }
+    PrimeGenerator g;
+    while (true) {
+        auto p = g.next();
+        size_t exp = 0;
+        while (!(n % p)) {
+            ++exp;
+            n /= p;
+        }
+        if (exp != 0) {
+            primeExps.push_back(PrimeExp{p, exp});
+        }
+        if (n == 1) {
+            return primeExps;
+        }
+    }
+}
 
 int main()
 {
-    std::cout << "hello" << std::endl;
     for (Natural n = 1; ;++n) {
         auto triangleNum = (n * (n + 1)) / 2;
         auto primeExps = primeReduceExp(triangleNum);

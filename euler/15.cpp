@@ -22,8 +22,9 @@ int main()
             table[i][j] = table[i - 1][j] + table[i][j - 1];
         }
     }
-    std::cout << "hello" << std::endl;
-    std::cout << "2,2: " << table[2][2] << std::endl;
-    std::cout << "20,20: " << table[20][20] << std::endl;
+    // std::cout << "hello" << std::endl;
+    // std::cout << "2,2: " << table[2][2] << std::endl;
+    // std::cout << "20,20: " << table[20][20] << std::endl;
+    std::cout << table[20][20] << std::endl;
     return 0;
 }

@@ -54,6 +54,6 @@ int main()
         point.y += shift.y;
     }
 
-    std::cout << "sum = " << sum << std::endl;
+    std::cout << sum << std::endl;
     return 0;
 }

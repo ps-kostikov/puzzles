@@ -31,10 +31,10 @@ int main()
             continue;
         }
         if (n_to_d[dn] == n) {
-            std::cout << n << ": " << dn << std::endl;
+            // std::cout << n << ": " << dn << std::endl;
             sum += n;
         }
     }
-    std::cout << "sum = " << sum << std::endl;
+    std::cout << sum << std::endl;
     return 0;
 }

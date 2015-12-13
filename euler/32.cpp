@@ -22,7 +22,7 @@ std::set<Natural> findProducts(const Digits digits)
             auto mulTwo = fromDigits(digits.begin() + mulOneEnd, digits.begin() + mulTwoEnd);
             auto prod = fromDigits(digits.begin() + mulTwoEnd, digits.end());
             if (mulOne * mulTwo == prod) {
-                std::cout << mulOne << " * " << mulTwo << " = " << prod << std::endl;
+                // std::cout << mulOne << " * " << mulTwo << " = " << prod << std::endl;
                 result.insert(prod);
             }
         }
@@ -50,6 +50,6 @@ int main()
     for (auto prod: products) {
         sum += prod;
     }
-    std::cout << "sum = " << sum << std::endl;
+    std::cout << sum << std::endl;
     return 0;
 }

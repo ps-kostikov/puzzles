@@ -44,7 +44,8 @@ int main()
             }
         }
     }
-    std::cout << "bestNum = " << bestNum << std::endl;
-    std::cout << "bestProduct = " << bestProduct << std::endl;
+    // std::cout << "bestNum = " << bestNum << std::endl;
+    // std::cout << "bestProduct = " << bestProduct << std::endl;
+    std::cout << bestProduct << std::endl;
     return 0;
 }

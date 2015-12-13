@@ -106,6 +106,6 @@ int main()
     sum += s1.size();
     sum += thousand.size();
 
-    std::cout << "sum = " << sum << std::endl;
+    std::cout << sum << std::endl;
     return 0;
 }

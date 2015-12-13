@@ -13,7 +13,7 @@ int main()
             if (std::abs(A - B1) == 1) {
                 long long perim = 2 * A + B1;
                 if (perim <= limit) {
-                    std::cout << "A = " << A << " B1 = " << B1 << std::endl;
+                    // std::cout << "A = " << A << " B1 = " << B1 << std::endl;
                     sum += perim;
                 }
             }
@@ -21,12 +21,12 @@ int main()
             if (std::abs(A - B2) == 1) {
                 long long perim = 2 * A + B2;
                 if (perim <= limit) {
-                    std::cout << "A = " << A << " B2 = " << B2 << std::endl;
+                    // std::cout << "A = " << A << " B2 = " << B2 << std::endl;
                     sum += perim;
                 }
             }
         }
     }
-    std::cout << "sum = " << sum << std::endl;
+    std::cout << sum << std::endl;
     return 0;
 }

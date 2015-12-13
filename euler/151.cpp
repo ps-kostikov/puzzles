@@ -60,8 +60,8 @@ int main()
 {
     Envelope init(N, 0);
     init[0] = 1;
-    std::cout << init << std::endl;
-    std::cout << makeChoice(init, 0) << std::endl;
+    // std::cout << init << std::endl;
+    // std::cout << makeChoice(init, 0) << std::endl;
     // std::cout << makeChoice(init, 1) << std::endl;
     // std::cout << makeChoice(init, 2) << std::endl;
     // std::cout << makeChoice(init, 3) << std::endl;

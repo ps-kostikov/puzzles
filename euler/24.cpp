@@ -21,10 +21,8 @@ int main()
     int targetIndex = 1000000;
     int index = 1;
     do {
-        if (index >= targetIndex - 1) {
-            std::cout << index << ": " << digits << std::endl;
-        }
-        if (index >= targetIndex + 1) {
+        if (index == targetIndex) {
+            std::cout << digits << std::endl;
             break;
         }
         ++index;

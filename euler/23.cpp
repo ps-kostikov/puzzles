@@ -34,12 +34,12 @@ int main()
             abundant.push_back(n);
         }
     }
-    std::cout << abundant.size() << std::endl;
+    // std::cout << abundant.size() << std::endl;
     std::sort(abundant.begin(), abundant.end());
 
-    for (int x: {1, 12, 24, maxN}) {
-        std::cout << x << ": " << canBeSum(abundant, x) << std::endl;
-    }
+    // for (int x: {1, 12, 24, maxN}) {
+    //     std::cout << x << ": " << canBeSum(abundant, x) << std::endl;
+    // }
 
     int sum = 0;
     for (int n = 1; n <= maxN; ++n) {
@@ -47,6 +47,6 @@ int main()
             sum += n;
         }
     }
-    std::cout << "sum = " << sum << std::endl;
+    std::cout << sum << std::endl;
     return 0;
 }

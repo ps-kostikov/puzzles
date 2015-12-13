@@ -40,7 +40,8 @@ int main()
         }
     }
     auto maxElIt = std::max_element(counts.begin(), counts.end());
-    std::cout << "max perim = " << maxElIt - counts.begin()
-        << " count = " << *maxElIt << std::endl;
+    // std::cout << "max perim = " << maxElIt - counts.begin()
+    //     << " count = " << *maxElIt << std::endl;
+    std::cout << maxElIt - counts.begin() << std::endl;
     return 0;
 }
