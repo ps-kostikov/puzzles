@@ -62,3 +62,16 @@ primeReduce(Natural n)
         }
     }
 }
+
+Natural GCD(Natural a, Natural b)
+{
+    int max = std::max(a, b);
+    int min = std::min(a, b);
+    if (min == 0) {
+        return 0;
+    }
+    if (max % min == 0) {
+        return min;
+    }
+    return GCD(min, max - min * (max / min));
+}

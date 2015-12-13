@@ -21,3 +21,5 @@ private:
 };
 
 Naturals primeReduce(Natural n);
+
+Natural GCD(Natural a, Natural b);
