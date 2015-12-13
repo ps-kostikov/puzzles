@@ -13,9 +13,9 @@ else
     exit 1
 fi
 
-if [ -f $number.in ]
+if [ -f in/$number.in ]
 then
-    answer=$(cat $number.in | $run)
+    answer=$(cat in/$number.in | $run)
 else
     answer=$($run)
 fi
