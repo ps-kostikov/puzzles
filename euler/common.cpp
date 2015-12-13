@@ -14,6 +14,9 @@ PrimeGenerator::next()
         Natural toTry = prev + 1;
         bool prime = true;
         for (auto p: current_) {
+            if (p * p > toTry) {
+                break;
+            }
             if (!(toTry % p)) {
                 prime = false;
                 break;
