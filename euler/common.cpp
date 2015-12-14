@@ -75,3 +75,27 @@ Natural GCD(Natural a, Natural b)
     }
     return GCD(min, max - min * (max / min));
 }
+
+namespace common {
+
+Digits toDigits(Natural n, Natural base)
+{
+    auto tmp = n;
+    Digits result;
+    while (tmp > 0) {
+        result.push_back(tmp % base);
+        tmp /= base;
+    }
+    return Digits(result.rbegin(), result.rend());
+}
+
+Natural fromDigits(const Digits& digits, Natural base)
+{
+    Natural result = 0;
+    for (auto it = digits.begin(); it < digits.end(); ++it) {
+        result = result * base + *it;
+    }
+    return result;
+}
+
+} // namespace common

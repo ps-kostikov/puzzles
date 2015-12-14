@@ -23,3 +23,11 @@ private:
 Naturals primeReduce(Natural n);
 
 Natural GCD(Natural a, Natural b);
+
+namespace common {
+
+Digits toDigits(Natural n, Natural base);
+
+Natural fromDigits(const Digits& digits, Natural base);
+
+} // namespace common
