@@ -29,6 +29,8 @@ $(TEST_PY_PROBLEMS): test-%:
 	./test.sh $* py
 
 
+all: $(CPP_PROBLEMS)
+
 test: $(TEST_CPP_PROBLEMS) $(TEST_PY_PROBLEMS)
 	@echo OK
 
