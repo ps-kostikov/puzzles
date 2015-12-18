@@ -26,6 +26,19 @@ Natural GCD(Natural a, Natural b);
 
 namespace common {
 
+class Primes
+{
+public:
+    Primes();
+
+    Natural operator[](Natural index);
+    bool contain(Natural n);
+
+private:
+    void genNext();
+    Naturals all_;
+};
+
 Digits toDigits(Natural n, Natural base);
 
 Natural fromDigits(const Digits& digits, Natural base);

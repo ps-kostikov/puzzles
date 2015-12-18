@@ -4,7 +4,7 @@
 #include <algorithm>
 
 
-int count(Natural prime, int numToReplace, const Naturals& primes)
+int count(Natural prime, int numToReplace, common::Primes& primes)
 {
     auto digits = common::toDigits(prime, 10);
     int best = 0;
@@ -30,7 +30,7 @@ int count(Natural prime, int numToReplace, const Naturals& primes)
                 }
             }
             Natural cand = common::fromDigits(fixedDigits, 10);
-            if (std::binary_search(primes.begin(), primes.end(), cand)) {
+            if (primes.contain(cand)) {
                 if (cand == prime) {
                     isPartOf = true;
                 }
@@ -48,23 +48,13 @@ int count(Natural prime, int numToReplace, const Naturals& primes)
 
 int main()
 {
-    PrimeGenerator gen;
-    Naturals primes;
+    common::Primes primes;
 
-    // std::vector<int> v{0, 1, 1};
-    // do {
-    //     for (auto i: v) {
-    //         std::cout << i << " ";
-    //     }
-    //     std::cout << std::endl;
-    // } while(std::next_permutation(v.begin(), v.end()));
     int maxToReplace = 1;
     for (Natural limit = 100; true; limit *= 10) {
-        do {
-            primes.push_back(gen.next());
-        } while (gen.max() < limit);
 
-        for (auto prime: primes) {
+        for (Natural index = 0; true; ++index) {
+            auto prime = primes[index];
             if (prime < limit / 10) {
                 continue;
             }
@@ -84,31 +74,5 @@ int main()
         ++maxToReplace;
     }
 
-    // Natural max = 1000000;
-    // while (gen.next() < max);
-    // auto primes = gen.all();
-    // primes.pop_back();
-
-    // Natural bestLen = 0;
-    // Natural bestPrime = 0;
-    // for (size_t left = 0; left < primes.size(); ++left) {
-
-    //     Natural sum = 0;
-    //     for (size_t i = left; i < primes.size(); ++i) {
-    //         sum += primes[i];
-    //         if (sum > max) {
-    //             break;
-    //         }
-
-    //         auto len = i - left + 1;
-    //         if (len > bestLen) {
-    //             if (std::binary_search(primes.begin(), primes.end(), sum)) {
-    //                 bestLen = len;
-    //                 bestPrime = sum;
-    //             }
-    //         }
-    //     }
-    // }
-    // std::cout << bestPrime << std::endl;
     return 0;
 }

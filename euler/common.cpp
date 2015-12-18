@@ -1,5 +1,7 @@
 #include "common.h"
 
+#include <algorithm>
+
 PrimeGenerator::PrimeGenerator(): current_{} {}
 
 Natural
@@ -77,6 +79,54 @@ Natural GCD(Natural a, Natural b)
 }
 
 namespace common {
+
+Primes::Primes()
+{}
+
+Natural Primes::operator[](Natural index)
+{
+    while (index >= all_.size()) {
+        genNext();
+    }
+    return all_[index];
+}
+
+bool Primes::contain(Natural n)
+{
+    while (!all_.empty() and *all_.rbegin() <= n) {
+        genNext();
+    }
+    return std::binary_search(all_.begin(), all_.end(), n);
+}
+
+void
+Primes::genNext()
+{
+    if (all_.empty()) {
+        all_.push_back(2);
+        return;
+    }
+    Natural prev = *all_.rbegin();
+    while (true) {
+        Natural toTry = prev + 1;
+        bool prime = true;
+        for (auto p: all_) {
+            if (p * p > toTry) {
+                break;
+            }
+            if (!(toTry % p)) {
+                prime = false;
+                break;
+            }
+        }
+        if (prime) {
+            all_.push_back(toTry);
+            return;
+        }
+        prev = toTry;
+    }
+}
+
 
 Digits toDigits(Natural n, Natural base)
 {
