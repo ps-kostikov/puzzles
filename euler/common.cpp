@@ -93,7 +93,7 @@ Natural Primes::operator[](Natural index)
 
 bool Primes::contain(Natural n)
 {
-    while (!all_.empty() and *all_.rbegin() <= n) {
+    while (all_.empty() or *all_.rbegin() < n) {
         genNext();
     }
     return std::binary_search(all_.begin(), all_.end(), n);
