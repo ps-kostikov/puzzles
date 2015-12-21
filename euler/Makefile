@@ -14,7 +14,7 @@ PY_PROBLEMS = \
 	16 20 \
 	22 25 29 30 \
 	55 56 57 59 \
-	65 \
+	62 65 \
 
 
 $(CPP_PROBLEMS): %: common.h common.cpp %.cpp
