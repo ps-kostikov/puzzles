@@ -39,6 +39,14 @@ private:
     Naturals all_;
 };
 
+struct PrimeMuliplier
+{
+    Natural prime;
+    Natural exp;
+};
+
+std::vector<PrimeMuliplier> factorization(Natural n, Primes& primes);
+
 Digits toDigits(Natural n, Natural base);
 
 Natural fromDigits(const Digits& digits, Natural base);

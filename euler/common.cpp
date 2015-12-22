@@ -127,6 +127,26 @@ Primes::genNext()
     }
 }
 
+std::vector<PrimeMuliplier> factorization(Natural n, Primes& primes)
+{
+    std::vector<PrimeMuliplier> result;
+
+    for (int i = 0; true; ++i) {
+        if (n == 1) {
+            break;
+        }
+        auto prime = primes[i];
+        Natural exp = 0;
+        while (n % prime == 0) {
+            ++exp;
+            n /= prime;
+        }
+        if (exp != 0) {
+            result.push_back(PrimeMuliplier{prime, exp});
+        }
+    }
+    return result;
+}
 
 Digits toDigits(Natural n, Natural base)
 {
